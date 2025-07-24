@@ -6,16 +6,7 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		BC49EDF12E319938005AE1FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC49EDF02E319938005AE1FD /* QuartzCore.framework */; };
-		BC49EDF32E31993D005AE1FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC49EDF22E31993D005AE1FD /* Foundation.framework */; };
-		BC49EDF52E319946005AE1FD /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC49EDF42E319946005AE1FD /* Metal.framework */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		BC49EDF02E319938005AE1FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		BC49EDF22E31993D005AE1FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		BC49EDF42E319946005AE1FD /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		BC778AE32E303B0B00BB71DE /* mercury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mercury.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,30 +23,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC49EDF52E319946005AE1FD /* Metal.framework in Frameworks */,
-				BC49EDF32E31993D005AE1FD /* Foundation.framework in Frameworks */,
-				BC49EDF12E319938005AE1FD /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC49EDEF2E319938005AE1FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BC49EDF42E319946005AE1FD /* Metal.framework */,
-				BC49EDF22E31993D005AE1FD /* Foundation.framework */,
-				BC49EDF02E319938005AE1FD /* QuartzCore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		BC778ADA2E303B0B00BB71DE = {
 			isa = PBXGroup;
 			children = (
 				BC778AE52E303B0B00BB71DE /* mercury */,
-				BC49EDEF2E319938005AE1FD /* Frameworks */,
 				BC778AE42E303B0B00BB71DE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -281,7 +258,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = "/Users/eber/Developer/Libraries/metal-cpp";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -292,7 +269,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = mercury/CPPMetalRenderer.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -310,7 +287,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = "/Users/eber/Developer/Libraries/metal-cpp";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -321,7 +298,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = mercury/CPPMetalRenderer.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
