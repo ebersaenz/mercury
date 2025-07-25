@@ -21,4 +21,4 @@ private:
     void buildBuffers();
 };
 
-#endif /* Renderer_hpp */
+#endif
