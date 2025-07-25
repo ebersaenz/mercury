@@ -15,6 +15,7 @@ class Renderer : NSObject, MTKViewDelegate {
     var cubeColorBuffer: MTLBuffer!
     var cubeIndexBuffer: MTLBuffer!
     var rotation: Float = 0
+    var camera: Camera!
     
     let cubeVertices: [Float] = [
         // Front
@@ -71,6 +72,7 @@ class Renderer : NSObject, MTKViewDelegate {
         cubeVertexBuffer = device.makeBuffer(bytes: cubeVertices, length: MemoryLayout<Float>.size * cubeVertices.count, options: [])
         cubeColorBuffer = device.makeBuffer(bytes: cubeColors, length: MemoryLayout<Float>.size * cubeColors.count, options: [])
         cubeIndexBuffer = device.makeBuffer(bytes: cubeIndices, length: MemoryLayout<UInt16>.size * cubeIndices.count, options: [])
+        camera = Camera(fovY: .pi/4, aspect: 1, nearZ: 0.1, farZ: 100)
     }
     
     func draw(in view: MTKView) {
@@ -83,8 +85,9 @@ class Renderer : NSObject, MTKViewDelegate {
         rotation += 0.01
         let modelMatrix = matrix_float4x4(rotationY: rotation) * matrix_float4x4(rotationX: rotation * 0.7)
         let aspect = Float(view.drawableSize.width / view.drawableSize.height)
-        let projMatrix = matrix_float4x4(perspectiveFov: .pi/4, aspect: aspect, nearZ: 0.1, farZ: 100)
-        var mvp = projMatrix * matrix_float4x4(translation: [0,0,-5]) * modelMatrix
+        camera.updateAspect(aspect)
+
+        var mvp = camera.mvMatrix * modelMatrix
 
         encoder.setCullMode(.back)
         encoder.setRenderPipelineState(pipelineState)
@@ -98,37 +101,4 @@ class Renderer : NSObject, MTKViewDelegate {
     }
 
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {}
-}
-
-extension matrix_float4x4 {
-    init(translation: SIMD3<Float>) {
-        self = matrix_identity_float4x4
-        columns.3 = SIMD4<Float>(translation, 1)
-    }
-    init(rotationX angle: Float) {
-        self = matrix_identity_float4x4
-        columns.1.y = cos(angle)
-        columns.1.z = sin(angle)
-        columns.2.y = -sin(angle)
-        columns.2.z = cos(angle)
-    }
-    init(rotationY angle: Float) {
-        self = matrix_identity_float4x4
-        columns.0.x = cos(angle)
-        columns.0.z = -sin(angle)
-        columns.2.x = sin(angle)
-        columns.2.z = cos(angle)
-    }
-    init(perspectiveFov fovY: Float, aspect: Float, nearZ: Float, farZ: Float) {
-        let y = 1 / tan(fovY * 0.5)
-        let x = y / aspect
-        let z = farZ / (nearZ - farZ)
-        self.init()
-        columns = (
-            SIMD4<Float>(x, 0, 0, 0),
-            SIMD4<Float>(0, y, 0, 0),
-            SIMD4<Float>(0, 0, z, -1),
-            SIMD4<Float>(0, 0, z * nearZ, 0)
-        )
-    }
 }
