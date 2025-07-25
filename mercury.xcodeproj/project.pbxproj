@@ -6,8 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BC9949392E343D4300EDF580 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9949382E343D4300EDF580 /* Metal.framework */; };
+		BC99493B2E343D8A00EDF580 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC99493A2E343D8A00EDF580 /* QuartzCore.framework */; };
+		BC99493D2E343D9400EDF580 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC99493C2E343D9400EDF580 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		BC9949082E343B9B00EDF580 /* mercury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mercury.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC9949382E343D4300EDF580 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		BC99493A2E343D8A00EDF580 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BC99493C2E343D9400EDF580 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +32,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC99493D2E343D9400EDF580 /* Foundation.framework in Frameworks */,
+				BC99493B2E343D8A00EDF580 /* QuartzCore.framework in Frameworks */,
+				BC9949392E343D4300EDF580 /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				BC99490A2E343B9B00EDF580 /* mercury */,
+				BC9949372E343D4300EDF580 /* Frameworks */,
 				BC9949092E343B9B00EDF580 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +56,16 @@
 				BC9949082E343B9B00EDF580 /* mercury.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BC9949372E343D4300EDF580 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC99493C2E343D9400EDF580 /* Foundation.framework */,
+				BC99493A2E343D8A00EDF580 /* QuartzCore.framework */,
+				BC9949382E343D4300EDF580 /* Metal.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +276,7 @@
 				DEVELOPMENT_TEAM = ZAZNG9C52S;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "/Users/eber/Developer/Libraries/metal-cpp";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -280,6 +304,7 @@
 				DEVELOPMENT_TEAM = ZAZNG9C52S;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "/Users/eber/Developer/Libraries/metal-cpp";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
